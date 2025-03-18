@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
@@ -36,7 +37,18 @@ func protectedEndpoint(c *gin.Context) {
 }
 
 func main() {
+	// Deschide sau creează fișierul de log
+	f, err := os.OpenFile("api.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		panic(err)
+	}
+
+	// Gin va scrie logurile în fișier
+	gin.DefaultWriter = f
+	gin.DefaultErrorWriter = f
+
 	r := gin.Default()
+
 	r.POST("/token", generateToken)
 	r.GET("/protected", func(c *gin.Context) {
 		tokenString := c.GetHeader("Authorization")
@@ -44,9 +56,11 @@ func main() {
 			c.JSON(http.StatusUnauthorized, gin.H{"error": "Missing token"})
 			return
 		}
+
 		token, err := jwt.ParseWithClaims(tokenString, &Claims{}, func(token *jwt.Token) (interface{}, error) {
 			return jwtKey, nil
 		})
+
 		if err != nil || !token.Valid {
 			c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid token"})
 			return
@@ -54,7 +68,8 @@ func main() {
 		protectedEndpoint(c)
 	})
 
-	r.Run(":8081")
+	// Rulează serverul Gin pe portul 8080
+	r.Run(":8080")
 }
 
 /*HOW to run
