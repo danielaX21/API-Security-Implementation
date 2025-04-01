@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
@@ -32,6 +33,17 @@ func generateToken(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"token": tokenString})
 }
 
+func extractToken(c *gin.Context) string {
+	authHeader := c.GetHeader("Authorization")
+	if authHeader == "" {
+		return ""
+	}
+	parts := strings.Split(authHeader, " ")
+	if len(parts) == 2 && parts[0] == "Bearer" {
+		return parts[1]
+	}
+	return ""
+}
 func protectedEndpoint(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "This is a protected resource!"})
 }
@@ -51,9 +63,9 @@ func main() {
 
 	r.POST("/token", generateToken)
 	r.GET("/protected", func(c *gin.Context) {
-		tokenString := c.GetHeader("Authorization")
+		tokenString := extractToken(c)
 		if tokenString == "" {
-			c.JSON(http.StatusUnauthorized, gin.H{"error": "Missing token"})
+			c.JSON(http.StatusUnauthorized, gin.H{"error": "Missing or wrong format token"})
 			return
 		}
 
@@ -68,7 +80,6 @@ func main() {
 		protectedEndpoint(c)
 	})
 
-	// Rulează serverul Gin pe portul 8080
 	r.Run(":8080")
 }
 
