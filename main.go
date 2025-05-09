@@ -44,7 +44,29 @@ func extractToken(c *gin.Context) string {
 	}
 	return ""
 }
+
 func protectedEndpoint(c *gin.Context) {
+	tokenString := extractToken(c)
+	if tokenString == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Missing or wrong format token"})
+		return
+	}
+
+	token, err := jwt.ParseWithClaims(tokenString, &Claims{}, func(token *jwt.Token) (interface{}, error) {
+		return jwtKey, nil
+	})
+
+	if err != nil || !token.Valid {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid token"})
+		return
+	}
+
+	claims, ok := token.Claims.(*Claims)
+	if !ok || claims.ExpiresAt < time.Now().Unix() {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Token has expired or is invalid"})
+		return
+	}
+
 	c.JSON(http.StatusOK, gin.H{"message": "This is a protected resource!"})
 }
 
@@ -62,23 +84,7 @@ func main() {
 	r := gin.Default()
 
 	r.POST("/token", generateToken)
-	r.GET("/protected", func(c *gin.Context) {
-		tokenString := extractToken(c)
-		if tokenString == "" {
-			c.JSON(http.StatusUnauthorized, gin.H{"error": "Missing or wrong format token"})
-			return
-		}
-
-		token, err := jwt.ParseWithClaims(tokenString, &Claims{}, func(token *jwt.Token) (interface{}, error) {
-			return jwtKey, nil
-		})
-
-		if err != nil || !token.Valid {
-			c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid token"})
-			return
-		}
-		protectedEndpoint(c)
-	})
+	r.GET("/protected", protectedEndpoint)
 
 	r.Run(":8080")
 }
@@ -96,11 +102,7 @@ Terminal 2
 1 pentru a obtine tockenul :curl -X POST http://localhost:8080/token
 2 daca incerc sa accesez endppointul fara a introduce tockenul curl -X GET http://localhost:8080/protected
 { "message": Missing tocken"}
-3 curl -X GET http://localhost:8080/protected -H "Authorization: my_token"
+3 curl -X GET http://localhost:8080/protected -H "Authorization: Bearer my_token"
 { "message": "This is a protected resource!" }
-
-
-
-
 
 */
