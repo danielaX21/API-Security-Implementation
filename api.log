@@ -1,0 +1,300 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /token                    --> main.generateToken (3 handlers)
+[GIN-debug] GET    /protected                --> main.main.func1 (3 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/03/18 - 22:09:38 | 200 |            0s |             ::1 | POST     "/token"
+[GIN] 2025/03/18 - 22:09:57 | 401 |            0s |             ::1 | GET      "/protected"
+[GIN] 2025/03/18 - 22:10:35 | 200 |            0s |             ::1 | GET      "/protected"
+[GIN] 2025/03/18 - 22:13:00 | 404 |            0s |             ::1 | GET      "/users"
+[GIN] 2025/03/18 - 22:13:00 | 404 |            0s |             ::1 | GET      "/favicon.ico"
+[GIN] 2025/03/18 - 22:13:45 | 200 |            0s |             ::1 | GET      "/protected"
+[GIN] 2025/03/18 - 22:13:48 | 200 |            0s |             ::1 | GET      "/protected"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /token                    --> main.generateToken (3 handlers)
+[GIN-debug] GET    /protected                --> main.main.func1 (3 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/03/19 - 09:05:53 | 200 |       332.6µs |             ::1 | POST     "/token"
+[GIN] 2025/03/19 - 09:06:22 | 401 |       336.6µs |             ::1 | GET      "/protected"
+[GIN] 2025/03/19 - 09:07:01 | 200 |            0s |             ::1 | GET      "/protected"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /token                    --> main.generateToken (3 handlers)
+[GIN-debug] GET    /protected                --> main.main.func1 (3 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/04/01 - 21:28:52 | 200 |       515.1µs |             ::1 | POST     "/token"
+[GIN] 2025/04/01 - 21:29:37 | 401 |            0s |             ::1 | GET      "/protected"
+[GIN] 2025/04/01 - 21:29:56 | 200 |            0s |             ::1 | GET      "/protected"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /token                    --> main.generateToken (3 handlers)
+[GIN-debug] GET    /protected                --> main.protectedEndpoint (3 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/05/09 - 21:28:02 | 200 |       546.9µs |             ::1 | POST     "/token"
+[GIN] 2025/05/09 - 21:28:49 | 401 |            0s |             ::1 | GET      "/protected"
+[GIN] 2025/05/09 - 21:29:25 | 401 |        93.1µs |             ::1 | GET      "/protected"
+[GIN] 2025/05/09 - 21:30:10 | 200 |      1.3248ms |             ::1 | GET      "/protected"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /token                    --> main.generateToken (3 handlers)
+[GIN-debug] GET    /tasks                    --> main.getTasks (4 handlers)
+[GIN-debug] POST   /tasks                    --> main.addTask (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/05/31 - 19:46:32 | 404 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/05/31 - 19:46:34 | 404 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/05/31 - 19:46:37 | 404 |            0s |             ::1 | OPTIONS  "/token"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /token                    --> main.generateToken (3 handlers)
+[GIN-debug] GET    /tasks                    --> main.getTasks (4 handlers)
+[GIN-debug] POST   /tasks                    --> main.addTask (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN-debug] [ERROR] listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /token                    --> main.generateToken (3 handlers)
+[GIN-debug] GET    /tasks                    --> main.getTasks (4 handlers)
+[GIN-debug] POST   /tasks                    --> main.addTask (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/05/31 - 19:50:12 | 404 |            0s |             ::1 | GET      "/"
+[GIN] 2025/05/31 - 19:51:04 | 404 |            0s |             ::1 | GET      "/"
+[GIN] 2025/05/31 - 19:51:10 | 400 |            0s |             ::1 | POST     "/token"
+[GIN] 2025/05/31 - 19:51:39 | 400 |            0s |             ::1 | POST     "/token"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /token                    --> main.generateToken (4 handlers)
+[GIN-debug] GET    /protected                --> main.protectedEndpoint (5 handlers)
+[GIN-debug] GET    /tasks                    --> main.getTasks (5 handlers)
+[GIN-debug] POST   /tasks                    --> main.addTask (5 handlers)
+[GIN-debug] GET    /admin/users              --> main.main.adminOnly.func2 (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/05/31 - 23:14:01 | 204 |            0s |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/05/31 - 23:14:01 | 200 |       513.5µs |             ::1 | POST     "/tasks"
+[GIN] 2025/05/31 - 23:14:01 | 204 |       640.2µs |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/05/31 - 23:14:01 | 200 |       639.4µs |             ::1 | GET      "/tasks"
+[GIN] 2025/05/31 - 23:14:03 | 204 |            0s |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/05/31 - 23:14:03 | 200 |            0s |             ::1 | POST     "/tasks"
+[GIN] 2025/05/31 - 23:14:03 | 204 |       651.4µs |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/05/31 - 23:14:03 | 200 |            0s |             ::1 | GET      "/tasks"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /token                    --> main.generateToken (4 handlers)
+[GIN-debug] GET    /protected                --> main.protectedEndpoint (5 handlers)
+[GIN-debug] GET    /tasks                    --> main.getTasks (5 handlers)
+[GIN-debug] POST   /tasks                    --> main.addTask (5 handlers)
+[GIN-debug] GET    /admin/users              --> main.main.adminOnly.func2 (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/06/03 - 01:13:49 | 204 |            0s |             ::1 | OPTIONS  "/api/login"
+[GIN] 2025/06/03 - 01:13:49 | 404 |       277.3µs |             ::1 | POST     "/api/login"
+[GIN] 2025/06/03 - 01:13:59 | 204 |            0s |             ::1 | OPTIONS  "/api/login"
+[GIN] 2025/06/03 - 01:13:59 | 404 |            0s |             ::1 | POST     "/api/login"
+[GIN] 2025/06/03 - 01:14:00 | 204 |        48.3µs |             ::1 | OPTIONS  "/api/login"
+[GIN] 2025/06/03 - 01:14:00 | 204 |            0s |             ::1 | OPTIONS  "/api/login"
+[GIN] 2025/06/03 - 01:14:00 | 404 |            0s |             ::1 | POST     "/api/login"
+[GIN] 2025/06/03 - 01:14:00 | 404 |            0s |             ::1 | POST     "/api/login"
+[GIN] 2025/06/03 - 01:14:00 | 204 |            0s |             ::1 | OPTIONS  "/api/login"
+[GIN] 2025/06/03 - 01:14:00 | 404 |            0s |             ::1 | POST     "/api/login"
+[GIN] 2025/06/03 - 01:14:00 | 204 |        23.2µs |             ::1 | OPTIONS  "/api/login"
+[GIN] 2025/06/03 - 01:14:00 | 404 |            0s |             ::1 | POST     "/api/login"
+[GIN] 2025/06/03 - 01:14:00 | 204 |            0s |             ::1 | OPTIONS  "/api/login"
+[GIN] 2025/06/03 - 01:14:00 | 404 |            0s |             ::1 | POST     "/api/login"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /token                    --> main.generateToken (4 handlers)
+[GIN-debug] GET    /protected                --> main.protectedEndpoint (5 handlers)
+[GIN-debug] GET    /tasks                    --> main.getTasks (5 handlers)
+[GIN-debug] POST   /tasks                    --> main.addTask (5 handlers)
+[GIN-debug] GET    /admin/users              --> main.main.adminOnly.func2 (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/06/03 - 01:18:43 | 204 |        33.5µs |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 01:18:43 | 200 |     78.8548ms |             ::1 | POST     "/token"
+[GIN] 2025/06/03 - 01:18:43 | 204 |       319.3µs |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/06/03 - 01:18:43 | 200 |            0s |             ::1 | GET      "/tasks"
+[GIN] 2025/06/03 - 01:18:48 | 204 |            0s |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/06/03 - 01:18:48 | 200 |       179.3µs |             ::1 | POST     "/tasks"
+[GIN] 2025/06/03 - 01:18:48 | 204 |            0s |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/06/03 - 01:18:48 | 200 |       489.7µs |             ::1 | GET      "/tasks"
+[GIN] 2025/06/03 - 01:18:51 | 204 |            0s |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/06/03 - 01:18:51 | 200 |        61.7µs |             ::1 | POST     "/tasks"
+[GIN] 2025/06/03 - 01:18:51 | 204 |            0s |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/06/03 - 01:18:51 | 200 |        59.3µs |             ::1 | GET      "/tasks"
+[GIN] 2025/06/03 - 01:19:01 | 204 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 01:19:01 | 200 |     91.2626ms |             ::1 | POST     "/token"
+[GIN] 2025/06/03 - 01:19:01 | 204 |            0s |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/06/03 - 01:19:01 | 200 |            0s |             ::1 | GET      "/tasks"
+[GIN] 2025/06/03 - 01:19:03 | 204 |            0s |             ::1 | OPTIONS  "/admin/users"
+[GIN] 2025/06/03 - 01:19:03 | 200 |       804.1µs |             ::1 | GET      "/admin/users"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /token                    --> main.handleUserLogin (4 handlers)
+[GIN-debug] GET    /protected                --> main.handleProtectedEndpoint (5 handlers)
+[GIN-debug] GET    /tasks                    --> main.handleGetUserTasks (5 handlers)
+[GIN-debug] POST   /tasks                    --> main.handleAddNewTask (5 handlers)
+[GIN-debug] GET    /admin/users              --> main.main.requireAdminRole.func1 (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/06/03 - 01:24:10 | 204 |        91.1µs |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/06/03 - 01:24:10 | 200 |          16µs |             ::1 | GET      "/tasks"
+[GIN] 2025/06/03 - 01:24:18 | 204 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 01:24:19 | 200 |    122.7921ms |             ::1 | POST     "/token"
+[GIN] 2025/06/03 - 01:24:19 | 204 |        25.4µs |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/06/03 - 01:24:19 | 200 |            0s |             ::1 | GET      "/tasks"
+[GIN] 2025/06/03 - 01:24:23 | 204 |            0s |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/06/03 - 01:24:23 | 200 |        46.2µs |             ::1 | POST     "/tasks"
+[GIN] 2025/06/03 - 01:24:23 | 204 |            0s |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/06/03 - 01:24:23 | 200 |            0s |             ::1 | GET      "/tasks"
+[GIN] 2025/06/03 - 01:24:40 | 204 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 01:24:40 | 200 |    121.9012ms |             ::1 | POST     "/token"
+[GIN] 2025/06/03 - 01:24:40 | 204 |            0s |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/06/03 - 01:24:40 | 200 |            0s |             ::1 | GET      "/tasks"
+[GIN] 2025/06/03 - 01:24:47 | 204 |            0s |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/06/03 - 01:24:47 | 200 |            0s |             ::1 | POST     "/tasks"
+[GIN] 2025/06/03 - 01:24:47 | 204 |            0s |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/06/03 - 01:24:47 | 200 |         673µs |             ::1 | GET      "/tasks"
+[GIN] 2025/06/03 - 01:24:49 | 204 |            0s |             ::1 | OPTIONS  "/admin/users"
+[GIN] 2025/06/03 - 01:24:49 | 200 |            0s |             ::1 | GET      "/admin/users"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /token                    --> main.handleUserLogin (3 handlers)
+[GIN-debug] GET    /protected                --> main.handleProtectedEndpoint (4 handlers)
+[GIN-debug] GET    /tasks                    --> main.handleGetUserTasks (4 handlers)
+[GIN-debug] POST   /tasks                    --> main.handleAddNewTask (4 handlers)
+[GIN-debug] GET    /admin/users              --> main.main.requireAdminRole.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/06/03 - 01:30:20 | 404 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 01:30:22 | 404 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 01:30:22 | 404 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 01:30:22 | 404 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 01:30:22 | 404 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 01:30:23 | 404 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 01:30:23 | 404 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 01:30:23 | 404 |            0s |             ::1 | OPTIONS  "/token"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /token                    --> main.handleUserLogin (4 handlers)
+[GIN-debug] GET    /protected                --> main.handleProtectedEndpoint (5 handlers)
+[GIN-debug] GET    /tasks                    --> main.handleGetUserTasks (5 handlers)
+[GIN-debug] POST   /tasks                    --> main.handleAddNewTask (5 handlers)
+[GIN-debug] GET    /admin/users              --> main.main.requireAdminRole.func1 (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/06/03 - 01:31:03 | 204 |        60.1µs |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 01:31:03 | 200 |     86.7631ms |             ::1 | POST     "/token"
+[GIN] 2025/06/03 - 01:31:03 | 204 |            0s |             ::1 | OPTIONS  "/tasks"
+[GIN] 2025/06/03 - 01:31:03 | 200 |            0s |             ::1 | GET      "/tasks"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /token                    --> main.handleUserLogin (4 handlers)
+[GIN-debug] GET    /protected                --> main.handleProtectedEndpoint (5 handlers)
+[GIN-debug] GET    /admin/users              --> main.main.requireAdminRole.func1 (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/06/03 - 02:01:22 | 204 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 02:01:22 | 200 |     79.7349ms |             ::1 | POST     "/token"
+[GIN] 2025/06/03 - 02:01:44 | 204 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 02:01:44 | 200 |    132.5187ms |             ::1 | POST     "/token"
+[GIN] 2025/06/03 - 02:01:47 | 204 |            0s |             ::1 | OPTIONS  "/admin/users"
+[GIN] 2025/06/03 - 02:01:47 | 200 |       923.6µs |             ::1 | GET      "/admin/users"
+[GIN] 2025/06/03 - 02:02:15 | 204 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 02:02:15 | 401 |    133.9949ms |             ::1 | POST     "/token"
+[GIN] 2025/06/03 - 02:02:23 | 204 |            0s |             ::1 | OPTIONS  "/token"
+[GIN] 2025/06/03 - 02:02:23 | 401 |            0s |             ::1 | POST     "/token"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /token                    --> main.handleUserLogin (4 handlers)
+[GIN-debug] GET    /protected                --> main.handleProtectedEndpoint (5 handlers)
+[GIN-debug] GET    /admin/users              --> main.main.requireAdminRole.func1 (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/06/03 - 02:14:49 | 400 |            0s |             ::1 | POST     "/token"
+[GIN] 2025/06/03 - 02:15:21 | 400 |            0s |             ::1 | POST     "/token"
+[GIN] 2025/06/03 - 02:16:54 | 200 |      57.809ms |             ::1 | POST     "/token"
+[GIN] 2025/06/03 - 02:19:55 | 200 |            0s |             ::1 | GET      "/protected"
+[GIN] 2025/06/03 - 02:23:09 | 200 |            0s |             ::1 | GET      "/admin/users"

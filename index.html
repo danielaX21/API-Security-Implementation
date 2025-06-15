@@ -1,0 +1,264 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Go JWT Task App</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; }
+    input, button { padding: 10px; margin: 5px 0; width: 100%; }
+    .hidden { display: none; }
+    ul { padding: 0; }
+    li { background: #f4f4f4; margin: 5px 0; padding: 10px; border-radius: 4px; }
+    #logoutBtn { background-color: #f44336; color: white; border: none; cursor: pointer; }
+    #logoutBtn:hover { background-color: #d32f2f; }
+  </style>
+</head>
+<body>
+
+  <h2>Login</h2>
+  <div id="loginForm">
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <p id="loginMessage"></p>
+  </div>
+
+  <div id="app" class="hidden">
+    <h3>Bun venit! Task-urile tale:</h3>
+    <ul id="taskList"></ul>
+
+    <input type="text" id="newTask" placeholder="Adaugă un task nou..." />
+    <button onclick="addTask()">Adaugă Task</button>
+
+    <button id="logoutBtn" onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const API_URL = "http://localhost:8080"; // schimbă dacă folosești alt port
+
+    async function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      const response = await fetch(`${API_URL}/token`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem("token", data.token);
+        document.getElementById("loginForm").classList.add("hidden");
+        document.getElementById("app").classList.remove("hidden");
+        loadTasks();
+      } else {
+        document.getElementById("loginMessage").innerText = data.error || "Eroare la login";
+      }
+    }
+
+    async function loadTasks() {
+      const token = localStorage.getItem("token");
+      const response = await fetch(`${API_URL}/tasks`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+
+      const tasks = await response.json();
+      const list = document.getElementById("taskList");
+      list.innerHTML = "";
+
+      tasks.forEach(task => {
+        const li = document.createElement("li");
+        li.innerText = task.content;
+        list.appendChild(li);
+      });
+    }
+
+    async function addTask() {
+      const token = localStorage.getItem("token");
+      const content = document.getElementById("newTask").value;
+
+      const response = await fetch(`${API_URL}/tasks`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({ content })
+      });
+
+      if (response.ok) {
+        document.getElementById("newTask").value = "";
+        loadTasks();
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem("token");
+      document.getElementById("app").classList.add("hidden");
+      document.getElementById("loginForm").classList.remove("hidden");
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("loginMessage").innerText = "Te-ai delogat!";
+    }
+  </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Go JWT Task App</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; }
+    input, button { padding: 10px; margin: 5px 0; width: 100%; }
+    .hidden { display: none; }
+    ul { padding: 0; }
+    li { background: #f4f4f4; margin: 5px 0; padding: 10px; border-radius: 4px; }
+    #logoutBtn { background-color: #f44336; color: white; border: none; cursor: pointer; }
+    #logoutBtn:hover { background-color: #d32f2f; }
+    #adminBtn { background-color: #3f51b5; color: white; }
+  </style>
+</head>
+<body>
+
+  <h2>Login</h2>
+  <div id="loginForm">
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <p id="loginMessage"></p>
+  </div>
+
+  <div id="app" class="hidden">
+    <h3>Bun venit! Task-urile tale:</h3>
+    <ul id="taskList"></ul>
+
+    <input type="text" id="newTask" placeholder="Adaugă un task nou..." />
+    <button onclick="addTask()">Adaugă Task</button>
+
+    <button id="adminBtn" class="hidden" onclick="getAllUsers()">Vezi toți utilizatorii (admin)</button>
+    <pre id="adminOutput"></pre>
+
+    <button id="logoutBtn" onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const API_URL = "http://localhost:8080"; // schimbă dacă folosești alt port
+
+    async function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      const response = await fetch(`${API_URL}/token`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem("token", data.token);
+        document.getElementById("loginForm").classList.add("hidden");
+        document.getElementById("app").classList.remove("hidden");
+        checkRole();
+        loadTasks();
+      } else {
+        document.getElementById("loginMessage").innerText = data.error || "Eroare la login";
+      }
+    }
+
+    function parseJwt(token) {
+      try {
+        const base64Payload = token.split('.')[1];
+        const payload = atob(base64Payload);
+        return JSON.parse(payload);
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function checkRole() {
+      const token = localStorage.getItem("token");
+      const claims = parseJwt(token);
+      if (claims && claims.role === "admin") {
+        document.getElementById("adminBtn").classList.remove("hidden");
+      }
+    }
+
+    async function loadTasks() {
+      const token = localStorage.getItem("token");
+      const response = await fetch(`${API_URL}/tasks`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+
+      const tasks = await response.json();
+      const list = document.getElementById("taskList");
+      list.innerHTML = "";
+
+      tasks.forEach(task => {
+        const li = document.createElement("li");
+        li.innerText = task.content;
+        list.appendChild(li);
+      });
+    }
+
+    async function addTask() {
+      const token = localStorage.getItem("token");
+      const content = document.getElementById("newTask").value;
+
+      const response = await fetch(`${API_URL}/tasks`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({ content })
+      });
+
+      if (response.ok) {
+        document.getElementById("newTask").value = "";
+        loadTasks();
+      }
+    }
+
+    async function getAllUsers() {
+      const token = localStorage.getItem("token");
+
+      const response = await fetch(`${API_URL}/admin/users`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      const data = await response.json();
+      document.getElementById("adminOutput").textContent = JSON.stringify(data, null, 2);
+    }
+
+    function logout() {
+      localStorage.removeItem("token");
+      document.getElementById("app").classList.add("hidden");
+      document.getElementById("loginForm").classList.remove("hidden");
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("loginMessage").innerText = "Te-ai delogat!";
+      document.getElementById("adminOutput").textContent = "";
+      document.getElementById("adminBtn").classList.add("hidden");
+    }
+
+    // Dacă e deja logat, verificăm direct
+    window.onload = () => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        document.getElementById("loginForm").classList.add("hidden");
+        document.getElementById("app").classList.remove("hidden");
+        checkRole();
+        loadTasks();
+      }
+    };
+  </script>
+</body>
+</html>

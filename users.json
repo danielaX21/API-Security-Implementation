@@ -1,0 +1,10 @@
+{
+  "user1": {
+    "password": "$2a$10$aI1Y1L9jm2eEr6W7dNoRhOJhAZRkPnqE7zTYBAGg/TmmvXBAsRVoq", 
+    "role": "user"
+  },
+  "admin": {
+    "password": "$2a$10$2X0gVdK/7iOC6u1q/Gg2zOUnvVo/OsvS6DP9iUlEQ.Q0y7tYnB4o.", 
+    "role": "admin"
+  }
+}
